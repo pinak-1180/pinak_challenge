@@ -1,0 +1,70 @@
+<h1>Failed Charges</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Amount</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @credit_cards.each do |credit_card| %>
+      <tr style="background-color: #FF0000;">
+        <td><%= credit_card.customer.full_name %></td>
+        <td><%= credit_card.amount %></td>
+        <td><%= credit_card.created_at %></td>        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<br>
+
+
+<h1>Disputed Charges</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Amount</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @disputed_charges.each do |credit_card| %>
+      <tr style="background-color: #FF5400;">
+        <td><%= credit_card.customer.full_name %></td>
+        <td><%= credit_card.amount %></td>
+        <td><%= credit_card.created_at %></td>        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<h1>Successful Charges</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Amount</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @successful_charges.each do |credit_card| %>
+      <tr>
+        <td><%= credit_card.customer.full_name %></td>
+        <td><%= credit_card.amount %></td>
+        <td><%= credit_card.created_at %></td>        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
